@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mein Test</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- leuchtende Farbflächen im Hintergrund -->
+  <div class="glow g1"></div>
+  <div class="glow g2"></div>
+
+  <main class="box">
+    <span class="tag">Test · Version 3 · Motion</span>
+    <h1>
+      <span class="w" style="--i:0">Hallo!</span>
+      <span class="w" style="--i:1">Das</span>
+      <span class="w" style="--i:2">ist</span>
+      <span class="w" style="--i:3">mein</span>
+      <span class="w hl" style="--i:4">Test.</span>
+    </h1>
+    <p class="fade" style="--i:6">Änderung von Claude – automatisch online gestellt!</p>
+
+    <!-- Straße mit fahrendem Auto -->
+    <div class="road fade" style="--i:7" aria-hidden="true">
+      <svg class="car" viewBox="0 0 64 28">
+        <path d="M6 18 L12 8 Q14 5 18 5 L38 5 Q42 5 45 8 L52 14 L58 15 Q62 16 62 20 L62 22 L2 22 L2 20 Q2 18 6 18 Z" fill="currentColor"/>
+        <rect x="16" y="8" width="11" height="7" rx="1.5" fill="#0f1114"/>
+        <rect x="30" y="8" width="11" height="7" rx="1.5" fill="#0f1114"/>
+        <circle class="wheel" cx="15" cy="22" r="5" fill="#0f1114" stroke="currentColor" stroke-width="2"/>
+        <circle class="wheel" cx="49" cy="22" r="5" fill="#0f1114" stroke="currentColor" stroke-width="2"/>
+      </svg>
+      <div class="lines"></div>
+    </div>
+
+    <p class="small fade" style="--i:8">Gestaltet von Maksym Kovalenko</p>
+  </main>
+</body>
+</html>

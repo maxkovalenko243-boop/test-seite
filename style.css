@@ -4,7 +4,11 @@
   --card:#1b1e23;    /* Kasten */
   --text:#f2f3f5;    /* Schrift */
   --muted:#a3a9b3;   /* graue Schrift */
+<<<<<<< HEAD
   --accent:#ffc933;  /* Gelb */
+=======
+  --accent:#4ade80;  /* Grün */
+>>>>>>> 30c060e6024ca80daa1270d822fd0e31873cf548
 }
 
 *{box-sizing:border-box}
@@ -19,18 +23,53 @@ body{
   background:var(--bg);
   color:var(--text);
   font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+<<<<<<< HEAD
 }
 
 .box{
   max-width:560px;
   width:100%;
+=======
+  overflow-x:hidden;
+}
+
+/* ---------- Hintergrund-Leuchten (schweben langsam) ---------- */
+.glow{
+  position:fixed;
+  width:340px;height:340px;
+  border-radius:50%;
+  filter:blur(80px);
+  opacity:.35;
+  z-index:0;
+  animation:float 12s ease-in-out infinite alternate;
+}
+.g1{background:var(--accent);top:-80px;left:-80px}
+.g2{background:#ffc933;bottom:-100px;right:-80px;animation-delay:-6s}
+@keyframes float{
+  to{transform:translate(60px,40px) scale(1.2)}
+}
+
+/* ---------- Kasten (fliegt beim Laden rein, schwebt leicht) ---------- */
+.box{
+  position:relative;z-index:1;
+  max-width:560px;width:100%;
+>>>>>>> 30c060e6024ca80daa1270d822fd0e31873cf548
   padding:40px 32px;
   border-radius:24px;
   background:var(--card);
   border:1px solid #2a2e35;
   text-align:center;
+<<<<<<< HEAD
 }
 
+=======
+  animation:pop .8s cubic-bezier(.2,.8,.2,1) both, bob 6s ease-in-out 1s infinite;
+}
+@keyframes pop{from{opacity:0;transform:translateY(40px) scale(.95)}}
+@keyframes bob{50%{transform:translateY(-6px)}}
+
+/* ---------- Plakette pulsiert ---------- */
+>>>>>>> 30c060e6024ca80daa1270d822fd0e31873cf548
 .tag{
   display:inline-block;
   padding:6px 14px;
@@ -39,8 +78,70 @@ body{
   color:#14161a;
   font-weight:700;
   font-size:.85rem;
+<<<<<<< HEAD
 }
 
 h1{font-size:clamp(1.8rem,6vw,2.6rem);margin:18px 0 10px}
 p{color:var(--muted);font-size:1.1rem;line-height:1.5;margin:0 0 10px}
 .small{font-size:.85rem;margin-top:24px}
+=======
+  animation:pulse 2.4s ease-in-out infinite;
+}
+@keyframes pulse{
+  0%,100%{box-shadow:0 0 0 0 rgba(74,222,128,.6)}
+  50%{box-shadow:0 0 0 10px rgba(74,222,128,0)}
+}
+
+/* ---------- Überschrift: Wort für Wort ---------- */
+h1{font-size:clamp(1.8rem,6vw,2.6rem);margin:18px 0 10px;line-height:1.2}
+.w{
+  display:inline-block;
+  animation:up .6s cubic-bezier(.2,.8,.2,1) both;
+  animation-delay:calc(.3s + var(--i) * .12s);
+}
+.hl{color:var(--accent)}
+@keyframes up{from{opacity:0;transform:translateY(24px) rotate(4deg)}}
+
+/* ---------- Texte blenden nacheinander ein ---------- */
+.fade{
+  animation:up .6s ease both;
+  animation-delay:calc(.3s + var(--i) * .12s);
+}
+p{color:var(--muted);font-size:1.1rem;line-height:1.5;margin:0 0 10px}
+.small{font-size:.85rem;margin-top:24px}
+
+/* ---------- Straße mit Auto ---------- */
+.road{
+  position:relative;
+  height:60px;
+  margin-top:26px;
+  border-radius:12px;
+  background:#121418;
+  overflow:hidden;
+}
+.lines{
+  position:absolute;left:0;right:0;bottom:12px;height:3px;
+  background:repeating-linear-gradient(90deg,var(--accent) 0 26px,transparent 26px 52px);
+  opacity:.6;
+  animation:lane .6s linear infinite;
+}
+@keyframes lane{to{background-position:-52px 0}}
+.car{
+  position:absolute;bottom:14px;left:-70px;
+  width:64px;
+  color:var(--accent);
+  animation:drive 4s cubic-bezier(.4,0,.2,1) infinite;
+}
+@keyframes drive{
+  0%{left:-70px}
+  45%,55%{left:calc(50% - 32px)}
+  100%{left:calc(100% + 10px)}
+}
+.wheel{transform-box:fill-box;transform-origin:center;animation:spin .4s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* ---------- Für Menschen, die keine Bewegung wollen ---------- */
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important}
+}
+>>>>>>> 30c060e6024ca80daa1270d822fd0e31873cf548
