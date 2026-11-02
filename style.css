@@ -4,7 +4,7 @@
   --card:#1b1e23;    /* Kasten */
   --text:#f2f3f5;    /* Schrift */
   --muted:#a3a9b3;   /* graue Schrift */
-  --accent:#ffc933;  /* Gelb */
+  --accent:#4ade80;  /* Grün */
 }
 
 *{box-sizing:border-box}
